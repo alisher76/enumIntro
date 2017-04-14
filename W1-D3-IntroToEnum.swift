@@ -6,7 +6,6 @@
 //
 //
 
-
 //Create a type, Color with the three primary colors and the three secondary colors. Then create a function complement which will return the complementary color for a provided color.
 
 
@@ -51,17 +50,6 @@ complement(color: .purple)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 //Create a type, Instruction which will have two cases, left and right. Both cases should have an Int as an associated value. create a function printInstruction which prints a given instruction with the format below (observe the difference between one and many steps).
 
 enum Instruction {
@@ -79,15 +67,21 @@ func printInstruction(_ instruction: Instruction) {
     
     switch instruction {
     case .left(let amount):
-        print("Turn left and take \(amount) steps.")
+        if amount == 0 {
+            print("Turn left.")
+        }else{
+            print("Turn left and take \(amount) steps.")
+        }
     case .right(let amount):
-        print("Turn right and take \(amount) steps")
+        if amount == 0 {
+            print("Turn right.")
+        }else{
+            print("Turn left and take \(amount) steps.")
+        }
     }
-    
 }
 
 
-printInstruction(.left(10))
-printInstruction(.right(15))
-
-printInstruction(.left(0))
+printInstruction(.left(9))
+printInstruction(.right(0))
+printInstruction(.right(1))
